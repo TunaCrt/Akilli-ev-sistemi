@@ -1,0 +1,50 @@
+// Module (app-level) build.gradle (android/app/build.gradle)
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin" // Flutter Gradle Plugin her zaman en son sırada olmalıdır!
+    id "com.google.gms.google-services" // Firebase için Google Services Plugin ekliyoruz
+}
+
+android {
+    namespace = "com.example.iot"
+    compileSdk = 34
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
+    defaultConfig {
+        applicationId = "com.example.iot"
+        minSdk = 23  // ✅ minSdk artık 23 (Firebase Auth ile uyumlu)
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
+
+dependencies {
+    // Firebase BoM (Bill of Materials) kullanımı - Firebase’in en güncel versiyonlarını çeker
+    implementation platform('com.google.firebase:firebase-bom:33.9.0')
+
+    // Firebase ürünlerini ekle (Firebase Database, Firebase Auth, Firebase Firestore vb.)
+    implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-firestore'
+}

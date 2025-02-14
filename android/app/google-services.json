@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "383697231204",
+    "firebase_url": "https://iot-projem-ebb44-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "iot-projem-ebb44",
+    "storage_bucket": "iot-projem-ebb44.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:383697231204:android:b9b2c59d18ab99bf73ae71",
+        "android_client_info": {
+          "package_name": "com.example.iot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA60QQEwyYyev6bFWUcySMNwuZ40e9y490"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
